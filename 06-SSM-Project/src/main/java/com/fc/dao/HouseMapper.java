@@ -2,7 +2,9 @@ package com.fc.dao;
 
 import com.fc.entity.House;
 import com.fc.entity.HouseExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface HouseMapper {

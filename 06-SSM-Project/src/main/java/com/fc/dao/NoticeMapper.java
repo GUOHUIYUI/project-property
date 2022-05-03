@@ -2,7 +2,9 @@ package com.fc.dao;
 
 import com.fc.entity.Notice;
 import com.fc.entity.NoticeExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface NoticeMapper {
