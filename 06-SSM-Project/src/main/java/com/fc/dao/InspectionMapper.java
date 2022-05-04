@@ -2,9 +2,7 @@ package com.fc.dao;
 
 import com.fc.entity.Inspection;
 import com.fc.entity.InspectionExample;
-
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 
 public interface InspectionMapper {

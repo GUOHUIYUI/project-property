@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("admin")==null) response.sendRedirect("login.jsp");%>
+    <% if (session.getAttribute("admin") == null) response.sendRedirect("login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -57,36 +57,36 @@
 </head>
 
 <body>
-    <!-- topbar starts -->
-    <div class="navbar navbar-default" role="navigation">
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
 
-        <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.jsp"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
+            <span>物业管理系统</span></a>
+
+        <!-- user dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${admin.name}</span>
+                <span class="caret"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
-                <span>物业管理系统</span></a>
-
-            <!-- user dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${admin.name}</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="user?action=logout">注销登录</a></li>
-                </ul>
-            </div>
-            <!-- user dropdown ends -->
+            <ul class="dropdown-menu">
+                <li><a href="user?action=logout">注销登录</a></li>
+            </ul>
         </div>
+        <!-- user dropdown ends -->
     </div>
-    <!-- topbar ends -->
+</div>
+<!-- topbar ends -->
 <div class="ch-container">
     <div class="row">
-        
+
         <!-- left menu starts -->
         <div class="col-sm-2 col-lg-2">
             <div class="sidebar-nav">
@@ -96,15 +96,21 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="admin?action=adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li class="active"><a class="ajax-link" href="inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li><a class="ajax-link" href="custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
-                        </li>                    
-					</ul>
+                        <li><a class="ajax-link" href="index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+                        <li><a class="ajax-link" href="admin?action=adminList"><i
+                                class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="main?action=maintainList"><i
+                                class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="notice?action=noticelist"><i
+                                class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+                        <li class="active"><a class="ajax-link" href="inspection?action=inspectionList"><i
+                                class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+                        <li><a class="ajax-link" href="custom?action=customAccountList"><i
+                                class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="house?action=houseList"><i
+                                class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -122,88 +128,92 @@
 
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-                <div>
-        <ul class="breadcrumb">
-            <li>
-                <a href="index.jsp">首页</a>
-            </li>
-            <li>
-                <a href="inspection?action=inspectionList">保安保洁</a>
-            </li>
-        </ul>
-    </div>
+            <div>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.jsp">首页</a>
+                    </li>
+                    <li>
+                        <a href="inspection?action=inspectionList">保安保洁</a>
+                    </li>
+                </ul>
+            </div>
 
-    <div class="row">
-    <div class="box col-md-12">
-    <div class="box-inner">
-    <div class="box-header well" data-original-title="">
-        <h2><i class="glyphicon glyphicon-info-sign"></i> 保安保洁</h2>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-info-sign"></i> 保安保洁</h2>
 
-        <div class="box-icon">
-            <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                    class="glyphicon glyphicon-chevron-up"></i></a>
-            <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
-        </div>
-    </div>
-    <div class="box-content">
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
 
-    <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
-    <thead>
-    <a class="btn btn-success" href="inspection/inspection-add.jsp">
-                <i class="glyphicon glyphicon-plus icon-white"></i>
-                &ensp;添&ensp;加&ensp;记&ensp;录
-    </a>
-    <br/>
-    <br/>
-    <tr>
-        <th>巡查人</th>
-        <th>类别</th>
-        <th>时间</th>
-        <th>处理人</th>
-        <th>当事人</th>
-        <th>巡查结果</th>
-        <th>备注</th>
-        <th>操作</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="inspection" items="${inspections}" >
-		<tr>
-			<td>${inspection.person}</td>
-			<td>${inspection.type}</td>
-			<td>${inspection.itime}</td>
-			<td>${inspection.conductor}</td>
-			<td>${inspection.party}</td>
-			<td>${inspection.result}</td>
-			<td>${inspection.memo}</td>
-        <td class="center">
-            <a class="btn btn-info" href="inspection?action=findById&id=${inspection.id}">
-                <i class="glyphicon glyphicon-edit icon-white"></i>
-                编&ensp;辑
-            </a>
-            <a class="btn btn-danger" href="" data-href="inspection?action=inspectionDelete&id=${inspection.id}" data-toggle="modal" data-target="#myModal">
-                <i class="glyphicon glyphicon-trash icon-white"></i>
-                删&ensp;除
-            </a>
-        </td>
-    </tr>
-    </c:forEach>
-    </tr>
-    </tbody>
-    </table>
-    </div>
-    </div>
-    </div>
-    <!--/span-->
+                            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
+                                <thead>
+                                <a class="btn btn-success" href="inspection/inspection-add.jsp">
+                                    <i class="glyphicon glyphicon-plus icon-white"></i>
+                                    &ensp;添&ensp;加&ensp;记&ensp;录
+                                </a>
+                                <br/>
+                                <br/>
+                                <tr>
+                                    <th>巡查人</th>
+                                    <th>类别</th>
+                                    <th>时间</th>
+                                    <th>处理人</th>
+                                    <th>当事人</th>
+                                    <th>巡查结果</th>
+                                    <th>备注</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="inspection" items="${inspections}">
+                                    <tr>
+                                        <td>${inspection.person}</td>
+                                        <td>${inspection.type}</td>
+                                        <td>${inspection.itime}</td>
+                                        <td>${inspection.conductor}</td>
+                                        <td>${inspection.party}</td>
+                                        <td>${inspection.result}</td>
+                                        <td>${inspection.memo}</td>
+                                        <td class="center">
+                                            <a class="btn btn-info"
+                                               href="inspection?action=findById&id=${inspection.id}">
+                                                <i class="glyphicon glyphicon-edit icon-white"></i>
+                                                编&ensp;辑
+                                            </a>
+                                            <a class="btn btn-danger" href=""
+                                               data-href="inspection?action=inspectionDelete&id=${inspection.id}"
+                                               data-toggle="modal" data-target="#myModal">
+                                                <i class="glyphicon glyphicon-trash icon-white"></i>
+                                                删&ensp;除
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--/span-->
 
-    </div><!--/row-->
+            </div><!--/row-->
 
-    
-    <!-- content ends -->
-    </div><!--/#content.col-md-0-->
-</div><!--/fluid-row-->
 
-   
+            <!-- content ends -->
+        </div><!--/#content.col-md-0-->
+    </div><!--/fluid-row-->
+
+
     <hr>
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -228,7 +238,7 @@
 
     <footer class="row">
         <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
-                Usman</a> 2012 - 2015</p>
+            Usman</a> 2012 - 2015</p>
 
         <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
                 href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
@@ -270,9 +280,9 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 <script>
-$('#myModal').on('show.bs.modal', function(e) {
-    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-});
+    $('#myModal').on('show.bs.modal', function (e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    });
 </script>
 
 </body>

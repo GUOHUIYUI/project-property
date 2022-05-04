@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+         pageEncoding="utf-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh-cn">
 <head>
@@ -53,63 +53,64 @@
 
 </head>
 
-<body background= 'img/bg.jpg' style="background-repeat: no-repeat; background-size:cover; margin: auto;">
+<body background='img/bg.jpg' style="background-repeat: no-repeat; background-size:cover; margin: auto;">
 <div class="ch-container">
     <div class="row">
-        
-    <div class="row">
-        <div class="col-md-12 center login-header">
-            <h1>物业管理系统</h1>
-        </div>
-        <!--/span-->
-    </div><!--/row-->
 
-    <div class="row">
-        <div class="well col-md-4 center login-box">
-            <div class="alert alert-info">
-                请输入用户名和密码.
+        <div class="row">
+            <div class="col-md-12 center login-header">
+                <h1>物业管理系统</h1>
             </div>
-            <form data-toggle="validator" class="form-horizontal" action="user?action=login"  method="post">
-                <fieldset>
-                  <div class="form-group col-md-12">
-                    <div class="input-group input-group-lg">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
-                        <input type="text" class="form-control" name="username" placeholder="用户名" required>
-                    </div>
-                   <!-- <span class="help-block with-errors"></span> -->
-                  </div>
-                    
-                  <div class="form-group col-md-12">
-                    <div class="input-group input-group-lg">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
-                        <input type="password" class="form-control" name="password" pattern="^[a-z0-9_]{6,18}$" placeholder="密码" required>
-                    </div>
-                    <!--<span class="help-block with-errors"></span>-->
-                  </div>
-                    <div class="clearfix"></div>
-                
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="usertype" value="user" checked>
-                            <i class="glyphicon glyphicon-home"></i>
-                            业主登录　　
-                        </label>
-                    	<label>
-                            <input type="radio" name="usertype" value="admin">
-                            <i class="glyphicon glyphicon-cog"></i>
-                            管理员登录
-                        </label>
-                    </div>
+            <!--/span-->
+        </div><!--/row-->
 
-                    <p class="center col-md-7">
-                        <button type="submit" class="btn btn-primary">登录系统</button>
-                    </p>
-                </fieldset>
-            </form>
-        </div>
-        <!--/span-->
-    </div><!--/row-->
-</div><!--/fluid-row-->
+        <div class="row">
+            <div class="well col-md-4 center login-box">
+                <div class="alert alert-info">
+                    请输入用户名和密码.
+                </div>
+                <form data-toggle="validator" class="form-horizontal" action="user?action=login" method="post">
+                    <fieldset>
+                        <div class="form-group col-md-12">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                                <input type="text" class="form-control" name="username" placeholder="用户名" required>
+                            </div>
+                            <!-- <span class="help-block with-errors"></span> -->
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                                <input type="password" class="form-control" name="password" pattern="^[a-z0-9_]{6,18}$"
+                                       placeholder="密码" required>
+                            </div>
+                            <!--<span class="help-block with-errors"></span>-->
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="usertype" value="user" checked>
+                                <i class="glyphicon glyphicon-home"></i>
+                                业主登录　　
+                            </label>
+                            <label>
+                                <input type="radio" name="usertype" value="admin">
+                                <i class="glyphicon glyphicon-cog"></i>
+                                管理员登录
+                            </label>
+                        </div>
+
+                        <p class="center col-md-7">
+                            <button type="submit" class="btn btn-primary">登录系统</button>
+                        </p>
+                    </fieldset>
+                </form>
+            </div>
+            <!--/span-->
+        </div><!--/row-->
+    </div><!--/fluid-row-->
 
 </div><!--/.fluid-container-->
 

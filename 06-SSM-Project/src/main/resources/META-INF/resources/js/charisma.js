@@ -43,9 +43,9 @@ $(document).ready(function () {
 
     function switchTheme(themeName) {
         // if (themeName == 'classic') {
-            // $('#bs-css').attr('href', 'bower_components/bootstrap/dist/css/bootstrap.min.css');
+        // $('#bs-css').attr('href', 'bower_components/bootstrap/dist/css/bootstrap.min.css');
         // } else {
-            // $('#bs-css').attr('href', 'css/bootstrap-' + themeName + '.min.css');
+        // $('#bs-css').attr('href', 'css/bootstrap-' + themeName + '.min.css');
         // }
 
         // $('#themes i').removeClass('glyphicon glyphicon-ok whitespace').addClass('whitespace');
@@ -116,7 +116,7 @@ $(document).ready(function () {
         var $ul = $(this).siblings('ul');
         var $li = $(this).parent();
         if ($ul.is(':visible')) $li.removeClass('active');
-        else                    $li.addClass('active');
+        else $li.addClass('active');
         $ul.slideToggle();
     });
 
@@ -142,7 +142,7 @@ function docReady() {
     });
 
     //chosen - improves select
-    $('[data-rel="chosen"],[rel="chosen"]').chosen({width:"95%"});
+    $('[data-rel="chosen"],[rel="chosen"]').chosen({width: "95%"});
 
     //tabs
     $('#myTab a:first').tab('show');
@@ -231,13 +231,13 @@ function docReady() {
         } else {
             $('#thumbnails').removeClass('modal-fullscreen');
             (document.webkitCancelFullScreen ||
-            document.mozCancelFullScreen ||
-            $.noop).apply(document);
+                document.mozCancelFullScreen ||
+                $.noop).apply(document);
         }
     });
 
     //tour
-    if ($('.tour').length && typeof(tour) == 'undefined') {
+    if ($('.tour').length && typeof (tour) == 'undefined') {
         var tour = new Tour();
         tour.addStep({
             element: "#content", /* html element next to which the step popover should be shown */
@@ -275,20 +275,20 @@ function docReady() {
     $('.datatable').dataTable({
         "aaSorting": [],
         "sDom": "<'row'<'col-md-6'l><'col-md-6'f>r>t<'row'<'col-md-12'i><'col-md-12 center-block'p>>",
-        "sPaginationType" : "bootstrap",
-        "oLanguage" : {
-            "sLengthMenu" : "每页显示 _MENU_ 条记录",
-			"sSearch" : "搜索:",
-			"sEmptyTable":"列表为空",
-			"sZeroRecords":"未找到相关的记录",
-			"sInfo":"显示从 _START_ 到 _END_ 共 _TOTAL_ 条记录",
-			"sInfoEmpty":"",
-			oPaginate : {
-					sFirst : "First",
-					sLast : "Last",
-					sNext : "下一页",
-					sPrevious : "上一页"
-				}
+        "sPaginationType": "bootstrap",
+        "oLanguage": {
+            "sLengthMenu": "每页显示 _MENU_ 条记录",
+            "sSearch": "搜索:",
+            "sEmptyTable": "列表为空",
+            "sZeroRecords": "未找到相关的记录",
+            "sInfo": "显示从 _START_ 到 _END_ 共 _TOTAL_ 条记录",
+            "sInfoEmpty": "",
+            oPaginate: {
+                sFirst: "First",
+                sLast: "Last",
+                sNext: "下一页",
+                sPrevious: "上一页"
+            }
         }
     });
     $('.btn-close').click(function (e) {
@@ -299,7 +299,7 @@ function docReady() {
         e.preventDefault();
         var $target = $(this).parent().parent().next('.box-content');
         if ($target.is(':visible')) $('i', $(this)).removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
-        else                       $('i', $(this)).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+        else $('i', $(this)).removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
         $target.slideToggle();
     });
     $('.btn-setting').click(function (e) {
@@ -389,8 +389,8 @@ $.extend($.fn.dataTableExt.oPagination, {
                 '</ul>'
             );
             var els = $('a', nPaging);
-            $(els[0]).bind('click.DT', { action: "previous" }, fnClickHandler);
-            $(els[1]).bind('click.DT', { action: "next" }, fnClickHandler);
+            $(els[0]).bind('click.DT', {action: "previous"}, fnClickHandler);
+            $(els[1]).bind('click.DT', {action: "next"}, fnClickHandler);
         },
 
         "fnUpdate": function (oSettings, fnDraw) {
@@ -402,8 +402,7 @@ $.extend($.fn.dataTableExt.oPagination, {
             if (oPaging.iTotalPages < iListLength) {
                 iStart = 1;
                 iEnd = oPaging.iTotalPages;
-            }
-            else if (oPaging.iPage <= iHalf) {
+            } else if (oPaging.iPage <= iHalf) {
                 iStart = 1;
                 iEnd = iListLength;
             } else if (oPaging.iPage >= (oPaging.iTotalPages - iHalf)) {

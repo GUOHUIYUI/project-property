@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<% if (session.getAttribute("admin")==null) response.sendRedirect("login.jsp");%>
+    <% if (session.getAttribute("admin") == null) response.sendRedirect("login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -96,13 +96,19 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-                      		<li><a class="ajax-link" href="index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="admin?action=adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li class="active"><a class="ajax-link" href="custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+                        <li><a class="ajax-link" href="admin?action=adminList"><i
+                                class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="main?action=maintainList"><i
+                                class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="notice?action=noticelist"><i
+                                class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="inspection?action=inspectionList"><i
+                                class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+                        <li class="active"><a class="ajax-link" href="custom?action=customAccountList"><i
+                                class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="house?action=houseList"><i
+                                class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
                     </ul>
                 </div>
@@ -142,7 +148,8 @@
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
                                         class="glyphicon glyphicon-chevron-up"></i></a>
-                                <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
                             </div>
                         </div>
                         <div class="box-content">
@@ -156,32 +163,35 @@
                                 <br/>
                                 <br/>
                                 <tr>
-							        <th>用户名</th>
-							        <th>密码</th>
-							        <th>业主编号</th>
-							        <th>车牌号</th>
-							        <th>操作</th>
-							    </tr>
+                                    <th>用户名</th>
+                                    <th>密码</th>
+                                    <th>业主编号</th>
+                                    <th>车牌号</th>
+                                    <th>操作</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach var="customAccount" items="${customAccounts}" >
-									<tr>
-										<td>${customAccount.username}</td>
-										<td>******</td>
-										<td>${customAccount.ownerid}</td>
-										<td>${customAccount.carid}</td>
-										<td class="center">
-                                            <a class="btn btn-info" href="custom?action=findById&accountid=${customAccount.accountid}">
+                                <c:forEach var="customAccount" items="${customAccounts}">
+                                    <tr>
+                                        <td>${customAccount.username}</td>
+                                        <td>******</td>
+                                        <td>${customAccount.ownerid}</td>
+                                        <td>${customAccount.carid}</td>
+                                        <td class="center">
+                                            <a class="btn btn-info"
+                                               href="custom?action=findById&accountid=${customAccount.accountid}">
                                                 <i class="glyphicon glyphicon-edit icon-white"></i>
                                                 编&ensp;辑
                                             </a>
-                                            <a class="btn btn-danger" href="#" data-href="custom?action=customAccountDelete&accountid=${customAccount.accountid}" data-toggle="modal" data-target="#myModal">
+                                            <a class="btn btn-danger" href="#"
+                                               data-href="custom?action=customAccountDelete&accountid=${customAccount.accountid}"
+                                               data-toggle="modal" data-target="#myModal">
                                                 <i class="glyphicon glyphicon-trash icon-white"></i>
                                                 删&ensp;除
                                             </a>
                                         </td>
-									</tr>
-								</c:forEach>
+                                    </tr>
+                                </c:forEach>
                                 </tr>
                                 </tbody>
                             </table>
@@ -264,7 +274,7 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 <script>
-    $('#myModal').on('show.bs.modal', function(e) {
+    $('#myModal').on('show.bs.modal', function (e) {
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
 </script>

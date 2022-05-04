@@ -49,7 +49,7 @@
         <table schema="" tableName="house"/>
         <table schema="" tableName="inspection"/>
         <table schema="" tableName="maintain"/>
-
+        <table schema="" tableName="custom_account"/>
         <table schema="" tableName="notice"/>
 
 

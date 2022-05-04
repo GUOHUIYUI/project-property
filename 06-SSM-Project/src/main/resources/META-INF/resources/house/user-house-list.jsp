@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<% if (session.getAttribute("customAccount")==null) response.sendRedirect("login.jsp");%>
+    <% if (session.getAttribute("customAccount") == null) response.sendRedirect("login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -57,36 +57,37 @@
 </head>
 
 <body>
-    <!-- topbar starts -->
-    <div class="navbar navbar-default" role="navigation">
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
 
-        <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index2.jsp"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
+            <span>物业管理系统</span></a>
+
+        <!-- user dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i><span
+                    class="hidden-sm hidden-xs"> ${customAccount.username}</span>
+                <span class="caret"></span>
             </button>
-            <a class="navbar-brand" href="index2.jsp"> <img alt="Charisma Logo" src="img/logo20.png" class="hidden-xs"/>
-                <span>物业管理系统</span></a>
-
-            <!-- user dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${customAccount.username}</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="user?action=logout">注销登录</a></li>
-                </ul>
-            </div>
-            <!-- user dropdown ends -->
+            <ul class="dropdown-menu">
+                <li><a href="user?action=logout">注销登录</a></li>
+            </ul>
         </div>
+        <!-- user dropdown ends -->
     </div>
-    <!-- topbar ends -->
+</div>
+<!-- topbar ends -->
 <div class="ch-container">
     <div class="row">
-        
+
         <!-- left menu starts -->
         <div class="col-sm-2 col-lg-2">
             <div class="sidebar-nav">
@@ -96,14 +97,21 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="notice?action=listforuser"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
-							<li><a class="ajax-link" href="custom?action=change&accountid=session.getAccountid();"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
-							<li><a class="ajax-link" href="main?action=maintainUserList&username=${customAccount.username }"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="custom?action=findById2&accountid=${customAccount.accountid }"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li class="active"><a class="ajax-link" href="house?action=findByOwnerid&ownerid=${customAccount.ownerid }"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
-                        </li>                  
-					</ul>
+                        <li><a class="ajax-link" href="index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+                        <li><a class="ajax-link" href="notice?action=listforuser"><i
+                                class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
+                        <li><a class="ajax-link" href="custom?action=change&accountid=session.getAccountid();"><i
+                                class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
+                        <li><a class="ajax-link"
+                               href="main?action=maintainUserList&username=${customAccount.username }"><i
+                                class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="custom?action=findById2&accountid=${customAccount.accountid }"><i
+                                class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+                        <li class="active"><a class="ajax-link"
+                                              href="house?action=findByOwnerid&ownerid=${customAccount.ownerid }"><i
+                                class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -121,78 +129,79 @@
 
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-                <div>
-        <ul class="breadcrumb">
-            <li>
-                <a href="index2.jsp">首页</a>
-            </li>
-            <li>
-                <a href="house?action=findByOwnerid&ownerid=${customAccount.ownerid }">房产信息</a>
-            </li>
-        </ul>
-    </div>
+            <div>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index2.jsp">首页</a>
+                    </li>
+                    <li>
+                        <a href="house?action=findByOwnerid&ownerid=${customAccount.ownerid }">房产信息</a>
+                    </li>
+                </ul>
+            </div>
 
-    <div class="row">
-    <div class="box col-md-12">
-    <div class="box-inner">
-    <div class="box-header well" data-original-title="">
-        <h2><i class="glyphicon glyphicon-list-alt"></i> 房产信息</h2>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-list-alt"></i> 房产信息</h2>
 
-        <div class="box-icon">
-            <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                    class="glyphicon glyphicon-chevron-up"></i></a>
-            <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
-        </div>
-    </div>
-    <div class="box-content">
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
 
-    <table class="table table-striped table-bordered bootstrap-datatable datatable responsive dataTable">
-    <thead>
-       <tr>
-        <th>门牌号</th>
-        <th>楼号</th>
-        <th>类型</th>
-        <th>地区</th>
-        <th>出售状况</th>
-        <th>单元</th>
-        <th>楼层</th>
-        <th>朝向</th>
-        <th>业主编号</th>
-        <th>备注</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="house" items="${houses}" >
-		<tr>
-			<td>${house.num}</td>
-			<td>${house.dep}</td>
-			<td>${house.type}</td>
-			<td>${house.area}</td>
-			<td>${house.sell}</td>
-			<td>${house.unit}</td>
-			<td>${house.floor}</td>
-			<td>${house.direction}</td>
-			<td>${house.ownerid}</td>
-			<td>${house.memo}</td>
-	    </tr>
-    </c:forEach>
-    
-    </tr>
-    </tbody>
-    </table>
-    </div>
-    </div>
-    </div>
-    <!--/span-->
+                            <table class="table table-striped table-bordered bootstrap-datatable datatable responsive dataTable">
+                                <thead>
+                                <tr>
+                                    <th>门牌号</th>
+                                    <th>楼号</th>
+                                    <th>类型</th>
+                                    <th>地区</th>
+                                    <th>出售状况</th>
+                                    <th>单元</th>
+                                    <th>楼层</th>
+                                    <th>朝向</th>
+                                    <th>业主编号</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <c:forEach var="house" items="${houses}">
+                                    <tr>
+                                        <td>${house.num}</td>
+                                        <td>${house.dep}</td>
+                                        <td>${house.type}</td>
+                                        <td>${house.area}</td>
+                                        <td>${house.sell}</td>
+                                        <td>${house.unit}</td>
+                                        <td>${house.floor}</td>
+                                        <td>${house.direction}</td>
+                                        <td>${house.ownerid}</td>
+                                        <td>${house.memo}</td>
+                                    </tr>
+                                </c:forEach>
 
-    </div><!--/row-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--/span-->
 
-    
-    <!-- content ends -->
-    </div><!--/#content.col-md-0-->
-</div><!--/fluid-row-->
+            </div><!--/row-->
 
-   
+
+            <!-- content ends -->
+        </div><!--/#content.col-md-0-->
+    </div><!--/fluid-row-->
+
+
     <hr>
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -217,7 +226,7 @@
 
     <footer class="row">
         <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
-                Usman</a> 2012 - 2015</p>
+            Usman</a> 2012 - 2015</p>
 
         <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
                 href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
@@ -259,9 +268,9 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 <script>
-$('#myModal').on('show.bs.modal', function(e) {
-    $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-});
+    $('#myModal').on('show.bs.modal', function (e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    });
 
 </script>
 </body>

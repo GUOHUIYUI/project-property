@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<% if (session.getAttribute("customAccount")==null) response.sendRedirect("login.jsp");%>
+    <% if (session.getAttribute("customAccount") == null) response.sendRedirect("login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -73,7 +73,8 @@
         <!-- user dropdown starts -->
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${customAccount.username}</span>
+                <i class="glyphicon glyphicon-user"></i><span
+                    class="hidden-sm hidden-xs"> ${customAccount.username}</span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -96,12 +97,19 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="notice?action=listforuser"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
-							<li><a class="ajax-link" href="custom?action=change&accountid=session.getAccountid();"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
-							<li><a class="ajax-link" href="main?action=maintainUserList&username=${customAccount.username }"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li class="active"><a class="ajax-link" href="custom?action=findById2&accountid=${customAccount.accountid }"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="house?action=findByOwnerid&ownerid=${customAccount.ownerid }"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="index2.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+                        <li><a class="ajax-link" href="notice?action=listforuser"><i
+                                class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;查&ensp;询</span></a>
+                        <li><a class="ajax-link" href="custom?action=change&accountid=session.getAccountid();"><i
+                                class="glyphicon glyphicon-info-sign"></i><span> &ensp;修&ensp;改&ensp;密&ensp;码</span></a>
+                        <li><a class="ajax-link"
+                               href="main?action=maintainUserList&username=${customAccount.username }"><i
+                                class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+                        <li class="active"><a class="ajax-link"
+                                              href="custom?action=findById2&accountid=${customAccount.accountid }"><i
+                                class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="house?action=findByOwnerid&ownerid=${customAccount.ownerid }"><i
+                                class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
                     </ul>
                 </div>
@@ -141,34 +149,35 @@
                             <div class="box-icon">
                                 <a href="#" class="btn btn-minimize btn-round btn-default"><i
                                         class="glyphicon glyphicon-chevron-up"></i></a>
-                                <a href="#" class="btn btn-close btn-round btn-default"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
                             </div>
                         </div>
                         <div class="box-content">
 
                             <table class="table table-striped table-bordered bootstrap-datatable datatable responsive">
                                 <thead>
-                       <!--         <a class="btn btn-success" href="customAccount/custom-add.jsp">
-                                    <i class="glyphicon glyphicon-plus icon-white"></i>
-                                    &ensp;添&ensp;加&ensp;记&ensp;录
-                                </a>   --> 
+                                <!--         <a class="btn btn-success" href="customAccount/custom-add.jsp">
+                                             <i class="glyphicon glyphicon-plus icon-white"></i>
+                                             &ensp;添&ensp;加&ensp;记&ensp;录
+                                         </a>   -->
                                 <br/>
                                 <br/>
                                 <tr>
-							        <th>用户名</th>
-							        <th>密码</th>
-							        <th>业主编号</th>
-							        <th>车牌号</th>
+                                    <th>用户名</th>
+                                    <th>密码</th>
+                                    <th>业主编号</th>
+                                    <th>车牌号</th>
 
-							    </tr>
+                                </tr>
                                 </thead>
                                 <tbody>
-								<tr>
-									<td>${customAccount.username}</td>
-									<td>******</td>
-									<td>${customAccount.ownerid}</td>
-									<td>${customAccount.carid}</td>
-								</tr>
+                                <tr>
+                                    <td>${customAccount.username}</td>
+                                    <td>******</td>
+                                    <td>${customAccount.ownerid}</td>
+                                    <td>${customAccount.carid}</td>
+                                </tr>
                                 </tr>
                                 </tbody>
                             </table>
@@ -251,7 +260,7 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 <script>
-    $('#myModal').on('show.bs.modal', function(e) {
+    $('#myModal').on('show.bs.modal', function (e) {
         $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
     });
 </script>

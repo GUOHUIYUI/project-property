@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>
+    <% if (session.getAttribute("admin") == null) response.sendRedirect("../login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -26,8 +26,8 @@
 
     <!-- The styles -->
     <link href="../css/bootstrap-cerulean.min.css" rel="stylesheet" media="screen">
-	<link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
- 
+    <link href="../css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
     <link href="../css/charisma-app.css" rel="stylesheet">
     <link href='../bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
     <link href='../bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
@@ -57,36 +57,37 @@
 </head>
 
 <body>
-    <!-- topbar starts -->
-    <div class="navbar navbar-default" role="navigation">
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
 
-        <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.jsp"> <img alt="Charisma Logo" src="../img/logo20.png"
+                                                          class="hidden-xs"/>
+            <span>物业管理系统</span></a>
+
+        <!-- user dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${admin.name}</span>
+                <span class="caret"></span>
             </button>
-            <a class="navbar-brand" href="../index.jsp"> <img alt="Charisma Logo" src="../img/logo20.png" class="hidden-xs"/>
-                <span>物业管理系统</span></a>
-
-            <!-- user dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${admin.name}</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="../user?action=logout">注销登录</a></li>
-                </ul>
-            </div>
-            <!-- user dropdown ends -->
+            <ul class="dropdown-menu">
+                <li><a href="../user?action=logout">注销登录</a></li>
+            </ul>
         </div>
+        <!-- user dropdown ends -->
     </div>
-    <!-- topbar ends -->
+</div>
+<!-- topbar ends -->
 <div class="ch-container">
     <div class="row">
-        
+
         <!-- left menu starts -->
         <div class="col-sm-2 col-lg-2">
             <div class="sidebar-nav">
@@ -96,17 +97,23 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="../admin?action=adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li class="active"><a class="ajax-link" href="../main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li><a class="ajax-link" href="../custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="../house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+                        <li><a class="ajax-link" href="../admin?action=adminList"><i
+                                class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+                        <li class="active"><a class="ajax-link" href="../main?action=maintainList"><i
+                                class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="../notice?action=noticelist"><i
+                                class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="../inspection?action=inspectionList"><i
+                                class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+                        <li><a class="ajax-link" href="../custom?action=customAccountList"><i
+                                class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="../house?action=houseList"><i
+                                class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
-                                              
+
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
@@ -125,120 +132,125 @@
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
             <div>
-    <ul class="breadcrumb">
-         <li>
-                <a href="../index.jsp">首页</a>
-         </li>
-         <li>
-                <a href="../main?action=maintainList">报修管理</a>
-         </li>
-          <li>
-                <a href="#">添加</a>
-          </li>
-    </ul>
-</div>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="../index.jsp">首页</a>
+                    </li>
+                    <li>
+                        <a href="../main?action=maintainList">报修管理</a>
+                    </li>
+                    <li>
+                        <a href="#">添加</a>
+                    </li>
+                </ul>
+            </div>
 
-<div class="row">
-	<div class="box col-md-12">
-		<div class="box-inner">
-			<div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> 编辑</h2>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-edit"></i> 编辑</h2>
 
-                <div class="box-icon">
-                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                            class="glyphicon glyphicon-chevron-up"></i></a>
-                    <a href="#" class="btn btn-close btn-round btn-default"><i
-                            class="glyphicon glyphicon-remove"></i></a>
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <form role="form" data-toggle="validator" action="../main?action=maintainAdd" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <div class="input-group col-md-3">
+                                            <label class="control-label">报修物品*</label>
+                                            <input type="text" class="form-control" name="thing" required>
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group col-md-3">
+                                            <label class="control-label">报修单状态*</label><br>
+                                            <select data-rel="chosen" name="status">
+                                                <option value="等待处理">等待处理</option>
+                                                <option value="正在处理">正在处理</option>
+                                                <option value="已完成">已完成</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group col-md-3">
+                                            <label class="control-label">房门号*</label>
+                                            <input type="text" class="form-control" name="homesnumber" required>
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">报修时间*</label>
+                                        <div class="input-group date form_date col-md-3" data-date=""
+                                             data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd">
+                                            <input class="form-control" name="sdate" type="text" value="" readonly
+                                                   required>
+                                            <span class="input-group-addon"><span
+                                                    class="glyphicon glyphicon-calendar"></span></span>
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <input type="hidden" id="dtp_input2" value=""/><br/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">维修时间</label>
+                                        <div class="input-group date form_date col-md-3" data-date=""
+                                             data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd">
+                                            <input class="form-control" name="rdate" type="text" value="" readonly>
+                                            <span class="input-group-addon"><span
+                                                    class="glyphicon glyphicon-calendar"></span></span>
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                        <input type="hidden" id="dtp_input2" value=""/><br/>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group col-md-3">
+                                            <label class="control-label">预计花费*</label>
+                                            <input type="text" class="form-control" pattern="^[0-9]+(\.[0-9]{0,2})?$"
+                                                   data-error="请输入有效的价格" name="tcost" required>
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group col-md-3">
+                                            <label class="control-label">实际花费</label>
+                                            <input type="text" class="form-control" pattern="^[0-9]+(\.[0-9]{0,2})?$"
+                                                   data-error="请输入有效的价格" name="scost">
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group col-md-3">
+                                            <label class="control-label">报修人*</label>
+                                            <input type="text" class="form-control" name="maintainer" required>
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group col-md-3">
+                                            <label class="control-label">报修详情</label>
+                                            <input type="text" class="form-control" name="smemo">
+                                            <span class="help-block with-errors"></span>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-info">提&ensp;交&ensp;</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-			<div class="box-content">
-                <form role="form" data-toggle="validator" action="../main?action=maintainAdd" method="post">
-				<fieldset>
-                    <div class="form-group">
-                        <div class="input-group col-md-3">
-                            <label class="control-label">报修物品*</label>
-                            <input type="text" class="form-control" name="thing" required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group col-md-3">
-                            <label class="control-label">报修单状态*</label><br>
-                            <select data-rel="chosen" name="status">
-                            	<option value="等待处理">等待处理</option>
-                            	<option value="正在处理">正在处理</option>
-                            	<option value="已完成">已完成</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group col-md-3">
-                            <label class="control-label" >房门号*</label>
-                            <input type="text" class="form-control" name="homesnumber" required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-						<label class="control-label">报修时间*</label>
-						<div class="input-group date form_date col-md-3" data-date="" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd">
-							<input class="form-control" name="sdate" type="text" value="" readonly required>
-							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-							<span class="help-block with-errors"></span>
-						</div>
-						<input type="hidden" id="dtp_input2" value="" /><br/>
-					</div>
-					<div class="form-group">
-						<label class="control-label">维修时间</label>
-						<div class="input-group date form_date col-md-3" data-date="" data-date-format="yyyy-mm-dd" data-link-format="yyyy-mm-dd">
-							<input class="form-control" name="rdate" type="text" value="" readonly>
-							<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-							<span class="help-block with-errors"></span>
-						</div>
-						<input type="hidden" id="dtp_input2" value="" /><br/>
-					</div>
-                    <div class="form-group">
-                        <div class="input-group col-md-3">
-                            <label class="control-label">预计花费*</label>
-                            <input type="text" class="form-control" pattern="^[0-9]+(\.[0-9]{0,2})?$" data-error="请输入有效的价格" name="tcost" required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group col-md-3">
-                            <label class="control-label">实际花费</label>
-                            <input type="text" class="form-control" pattern="^[0-9]+(\.[0-9]{0,2})?$" data-error="请输入有效的价格" name="scost" >
-                            <span class="help-block with-errors"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group col-md-3">
-                            <label class="control-label">报修人*</label>
-                            <input type="text" class="form-control" name="maintainer" required>
-                            <span class="help-block with-errors"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="input-group col-md-3">
-                            <label class="control-label">报修详情</label>
-                            <input type="text" class="form-control" name="smemo">
-                            <span class="help-block with-errors"></span>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-info">提&ensp;交&ensp;</button>
-				</fieldset>
-                </form>
-            </div>
-		</div>
-	</div>
-</div>
 
 
-
-    <!-- content ends -->
-    </div><!--/#content.col-md-0-->
-</div><!--/fluid-row-->
-
+            <!-- content ends -->
+        </div><!--/#content.col-md-0-->
+    </div><!--/fluid-row-->
 
 
     <hr>
@@ -265,7 +277,7 @@
 
     <footer class="row">
         <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
-                Usman</a> 2012 - 2015</p>
+            Usman</a> 2012 - 2015</p>
 
         <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
                 href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
@@ -311,15 +323,15 @@
 <script type="text/javascript" src="../js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript" src="../js/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script type="text/javascript">
-	$('.form_date').datetimepicker({
-        language:  'zh-CN',
+    $('.form_date').datetimepicker({
+        language: 'zh-CN',
         weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
     });
 </script>
 

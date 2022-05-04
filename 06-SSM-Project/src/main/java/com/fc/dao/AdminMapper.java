@@ -2,9 +2,7 @@ package com.fc.dao;
 
 import com.fc.entity.Admin;
 import com.fc.entity.AdminExample;
-
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 
 public interface AdminMapper {

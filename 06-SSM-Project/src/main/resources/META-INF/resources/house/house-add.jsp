@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<% if (session.getAttribute("admin")==null) response.sendRedirect("../login.jsp");%>
+    <% if (session.getAttribute("admin") == null) response.sendRedirect("../login.jsp");%>
     <!--
         ===
         This comment should NOT be removed.
@@ -56,36 +56,37 @@
 </head>
 
 <body>
-    <!-- topbar starts -->
-    <div class="navbar navbar-default" role="navigation">
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
 
-        <div class="navbar-inner">
-            <button type="button" class="navbar-toggle pull-left animated flip">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.jsp"> <img alt="Charisma Logo" src="../img/logo20.png"
+                                                          class="hidden-xs"/>
+            <span>物业管理系统</span></a>
+
+        <!-- user dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${admin.name}</span>
+                <span class="caret"></span>
             </button>
-            <a class="navbar-brand" href="../index.jsp"> <img alt="Charisma Logo" src="../img/logo20.png" class="hidden-xs"/>
-                <span>物业管理系统</span></a>
-
-            <!-- user dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> ${admin.name}</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="../user?action=logout">注销登录</a></li>
-                </ul>
-            </div>
-            <!-- user dropdown ends -->
+            <ul class="dropdown-menu">
+                <li><a href="../user?action=logout">注销登录</a></li>
+            </ul>
         </div>
+        <!-- user dropdown ends -->
     </div>
-    <!-- topbar ends -->
+</div>
+<!-- topbar ends -->
 <div class="ch-container">
     <div class="row">
-        
+
         <!-- left menu starts -->
         <div class="col-sm-2 col-lg-2">
             <div class="sidebar-nav">
@@ -95,17 +96,23 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">功能</li>
-							<li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
-							<li><a class="ajax-link" href="../admin?action=adminList"><i class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
-							<li><a class="ajax-link" href="../main?action=maintainList"><i class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../notice?action=noticelist"><i class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
-							<li><a class="ajax-link" href="../inspection?action=inspectionList"><i class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
-							<li><a class="ajax-link" href="../custom?action=customAccountList"><i class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
-							<li class="active"><a class="ajax-link" href="../house?action=houseList"><i class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="../index.jsp"><i class="glyphicon glyphicon-home"></i><span> &ensp;首&ensp;页</span></a>
+                        <li><a class="ajax-link" href="../admin?action=adminList"><i
+                                class="glyphicon glyphicon-cog"></i><span> &ensp;管&ensp;理&ensp;员&ensp;信&ensp;息</span></a>
+                        <li><a class="ajax-link" href="../main?action=maintainList"><i
+                                class="glyphicon glyphicon-wrench"></i><span> &ensp;报&ensp;修&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="../notice?action=noticelist"><i
+                                class="glyphicon glyphicon-envelope"></i><span> &ensp;公&ensp;告&ensp;管&ensp;理</span></a>
+                        <li><a class="ajax-link" href="../inspection?action=inspectionList"><i
+                                class="glyphicon glyphicon-info-sign"></i><span> &ensp;保&ensp;安&ensp;保&ensp;洁</span></a>
+                        <li><a class="ajax-link" href="../custom?action=customAccountList"><i
+                                class="glyphicon glyphicon-user"></i><span> &ensp;业&ensp;主&ensp;信&ensp;息</span></a>
+                        <li class="active"><a class="ajax-link" href="../house?action=houseList"><i
+                                class="glyphicon glyphicon-list-alt"></i><span> &ensp;房&ensp;产&ensp;信&ensp;息</span></a>
                         </li>
-                                              
+
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
@@ -124,132 +131,128 @@
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
             <div>
-    <ul class="breadcrumb">
-     		<li>
-                <a href="../index.jsp">首页</a>
-            </li>
-            <li>
-                <a href="../house?action=houseList">房产信息</a>
-            </li>
-        	<li>
-            <a href="#">添加</a>
-        	</li>
-    </ul>
-</div>
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="../index.jsp">首页</a>
+                    </li>
+                    <li>
+                        <a href="../house?action=houseList">房产信息</a>
+                    </li>
+                    <li>
+                        <a href="#">添加</a>
+                    </li>
+                </ul>
+            </div>
 
-<div class="row">
-	<div class="box col-md-12">
-		<div class="box-inner">
-			<div class="box-header well" data-original-title="">
-                <h2><i class="glyphicon glyphicon-edit"></i> 编辑</h2>
+            <div class="row">
+                <div class="box col-md-12">
+                    <div class="box-inner">
+                        <div class="box-header well" data-original-title="">
+                            <h2><i class="glyphicon glyphicon-edit"></i> 编辑</h2>
 
-                <div class="box-icon">
-                    <a href="#" class="btn btn-minimize btn-round btn-default"><i
-                            class="glyphicon glyphicon-chevron-up"></i></a>
-                    <a href="#" class="btn btn-close btn-round btn-default"><i
-                            class="glyphicon glyphicon-remove"></i></a>
+                            <div class="box-icon">
+                                <a href="#" class="btn btn-minimize btn-round btn-default"><i
+                                        class="glyphicon glyphicon-chevron-up"></i></a>
+                                <a href="#" class="btn btn-close btn-round btn-default"><i
+                                        class="glyphicon glyphicon-remove"></i></a>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <form role="form" action="../house?action=houseAdd" data-toggle="validator" method="post">
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">门牌号*</label>
+                                        <input type="text" class="form-control" name="num" required>
+                                        <span class="help-block with-errors"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">楼号*</label>
+                                        <input type="text" class="form-control" name="dep" required>
+                                        <span class="help-block with-errors"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">类型*</label>
+                                        <select data-rel="chosen" name="type">
+                                            <option value="独栋">独栋</option>
+                                            <option value="多层">多层</option>
+                                            <option value="小高层">小高层</option>
+                                            <option value="高层">高层</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">地区*</label>
+                                        <input type="text" class="form-control" name="area" required>
+                                        <span class="help-block with-errors"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">出售状况*</label>
+                                        <select data-rel="chosen" name="sell">
+                                            <option value="已售">已售</option>
+                                            <option value="待售">待售</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">单元*</label>
+                                        <input type="text" class="form-control" name="unit" required>
+                                        <span class="help-block with-errors"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">楼层*</label>
+                                        <input type="number" class="form-control" name="floor" required>
+                                        <span class="help-block with-errors"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">朝向*</label>
+                                        <select data-rel="chosen" name="direction">
+                                            <option value="南">南</option>
+                                            <option value="东">东</option>
+                                            <option value="西">西</option>
+                                            <option value="北">北</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-3">
+                                        <label class="control-label">业主编号</label>
+                                        <input type="text" class="form-control" name="ownerid">
+                                        <span class="help-block with-errors"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group col-md-4">
+                                        <label class="control-label">备注</label>
+                                        <input type="text" class="form-control" name="memo">
+                                        <span class="help-block with-errors"></span>
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" class="btn btn-info">提&ensp;交&ensp;</button>
+                            </form>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-			<div class="box-content">
-                <form role="form" action="../house?action=houseAdd" data-toggle="validator" method="post">
-                    <div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label">门牌号*</label>
-							<input type="text" class="form-control" name="num" required>
-							<span class="help-block with-errors"></span>
-						</div>
-                    </div>
-                    <div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label">楼号*</label>
-							<input type="text" class="form-control" name="dep" required>
-							<span class="help-block with-errors"></span>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label" >类型*</label>
-							<select data-rel="chosen" name="type">
-                            	<option value="独栋">独栋</option>
-                            	<option value="多层">多层</option>
-                            	<option value="小高层">小高层</option>
-                            	<option value="高层">高层</option>
-                            </select>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label" >地区*</label>
-							<input type="text" class="form-control" name="area" required>
-							<span class="help-block with-errors"></span>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label">出售状况*</label>
-							<select data-rel="chosen" name="sell">
-                            	<option value="已售">已售</option>
-                            	<option value="待售">待售</option>
-                            </select>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label" >单元*</label>
-							<input type="text" class="form-control" name="unit" required>
-							<span class="help-block with-errors"></span>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label" >楼层*</label>
-							<input type="number" class="form-control" name="floor" required>
-							<span class="help-block with-errors"></span>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label" >朝向*</label>
-							<select data-rel="chosen" name="direction">
-                            	<option value="南">南</option>
-                            	<option value="东">东</option>
-                            	<option value="西">西</option>
-                            	<option value="北">北</option>
-                            </select>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-3">
-							<label class="control-label" >业主编号</label>
-							<input type="text" class="form-control" name="ownerid" >
-							<span class="help-block with-errors"></span>
-						</div>
-                    </div>
-					<div class="form-group">
-						<div class="input-group col-md-4">
-							<label class="control-label" >备注</label>
-							<input type="text" class="form-control" name="memo" >
-							<span class="help-block with-errors"></span>
-						</div>
-					</div>
-					
-					
-					
-					
-                    <button type="submit" class="btn btn-info">提&ensp;交&ensp;</button>
-                </form>
-
-            </div>
-		</div>
-	</div>
-</div>
 
 
-
-    <!-- content ends -->
-    </div><!--/#content.col-md-0-->
-</div><!--/fluid-row-->
-
+            <!-- content ends -->
+        </div><!--/#content.col-md-0-->
+    </div><!--/fluid-row-->
 
 
     <hr>
@@ -276,7 +279,7 @@
 
     <footer class="row">
         <p class="col-md-9 col-sm-9 col-xs-12 copyright">&copy; <a href="http://usman.it" target="_blank">Muhammad
-                Usman</a> 2012 - 2015</p>
+            Usman</a> 2012 - 2015</p>
 
         <p class="col-md-3 col-sm-3 col-xs-12 powered-by">Powered by: <a
                 href="http://usman.it/free-responsive-admin-template">Charisma</a></p>
